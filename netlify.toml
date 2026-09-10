@@ -1,0 +1,8 @@
+﻿[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/karton/*"
+  to = "/karton/:splat/index.html"
+  status = 200
