@@ -17,7 +17,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #efeff1;
+  background: #f2f3f5;
   color: var(--ink);
   line-height: 1.45;
 }
@@ -27,7 +27,8 @@ a {
 }
 
 .shell {
-  background: var(--ink);
+  background: #111214;
+  border-bottom: 6px solid var(--red);
 }
 
 .page {
@@ -40,7 +41,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 22px 0 18px;
+  padding: 18px 0;
   color: #ffffff;
 }
 
@@ -53,8 +54,8 @@ a {
 }
 
 .brand-logo {
-  width: 82px;
-  height: 82px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
   object-fit: cover;
   background: #111214;
@@ -78,7 +79,7 @@ a {
 
 .brand h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1.05;
   color: #ffffff;
 }
@@ -124,6 +125,71 @@ a {
   align-items: end;
   padding: 20px 0 34px;
   color: #ffffff;
+}
+
+.portal {
+  padding-top: 22px;
+}
+
+.portal-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.portal-hero-copy,
+.portal-panel,
+.search-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(17, 18, 20, 0.08);
+}
+
+.portal-hero-copy {
+  padding: 28px;
+}
+
+.portal-hero-copy .brand-kicker {
+  color: var(--red);
+}
+
+.portal-hero-copy h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1;
+}
+
+.portal-hero-copy .hero-text {
+  color: var(--ink-soft);
+}
+
+.portal-panel {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.portal-panel .stat {
+  display: grid;
+  align-content: center;
+  min-height: 104px;
+  border-radius: 0;
+  background: #ffffff;
+}
+
+.portal-panel .stat strong {
+  color: var(--red);
+  font-size: 34px;
+}
+
+.portal-panel .stat span {
+  color: var(--ink-soft);
+  font-size: 13px;
 }
 
 .hero h2 {
@@ -181,15 +247,25 @@ a {
 
 .content {
   padding: 28px 0 44px;
-  background: #efeff1;
+  background: #f2f3f5;
 }
 
-.toolbar {
+.toolbar,
+.search-panel {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(260px, 1fr);
   gap: 14px;
   align-items: center;
   margin-bottom: 18px;
+}
+
+.search-panel {
+  padding: 18px;
+}
+
+.search-panel p {
+  margin: 6px 0 0;
+  color: var(--muted);
 }
 
 .search {
@@ -202,7 +278,7 @@ a {
   color: var(--ink);
   font-size: 16px;
   outline: none;
-  box-shadow: 0 6px 22px rgba(17, 18, 20, 0.06);
+  box-shadow: none;
 }
 
 .search:focus {
@@ -216,19 +292,19 @@ a {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 14px;
 }
 
 .vehicle-card {
   display: flex;
-  min-height: 238px;
+  min-height: 216px;
   flex-direction: column;
-  padding: 18px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(17, 18, 20, 0.08);
+  box-shadow: 0 8px 22px rgba(17, 18, 20, 0.06);
   text-decoration: none;
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
@@ -255,7 +331,7 @@ a {
 
 .vehicle-card h3 {
   margin: 8px 0 0;
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1.08;
 }
 
@@ -529,7 +605,9 @@ a {
 
   .topbar,
   .hero,
+  .portal-hero,
   .toolbar,
+  .search-panel,
   .vehicle-hero {
     grid-template-columns: 1fr;
   }
@@ -543,8 +621,8 @@ a {
   }
 
   .brand-logo {
-    width: 68px;
-    height: 68px;
+    width: 64px;
+    height: 64px;
   }
 
   .brand h1 {
@@ -557,6 +635,18 @@ a {
 
   .hero-panel {
     display: none;
+  }
+
+  .portal-hero-copy {
+    padding: 20px;
+  }
+
+  .portal-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 
   .doc-head {
